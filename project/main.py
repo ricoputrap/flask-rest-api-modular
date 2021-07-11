@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from .controllers.video import Video
+from project.controllers.video import Video
 
 app = Flask(__name__)
 api = Api(app)
@@ -9,7 +9,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
 @app.before_first_request
 def create_tables():
-  from .db import db
+  from project.db import db
   db.init_app(app)
   db.create_all()
 

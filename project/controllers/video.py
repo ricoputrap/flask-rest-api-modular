@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse, abort, fields, marshal_with
-from ..models.video import VideoModel
+from project.models.video import VideoModel
 
 # Arguments definition for PUT operation (create video object)
 video_put_args = reqparse.RequestParser()

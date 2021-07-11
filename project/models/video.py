@@ -1,4 +1,4 @@
-from ..db import db
+from project.db import db
 
 class VideoModel(db.Model):
   id = db.Column(db.Integer, primary_key=True)
