@@ -5,7 +5,7 @@ from project.controllers.video import Video
 app = Flask(__name__)
 api = Api(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://rico:pwd1234@localhost:5432/flaskrestmodular'
 
 @app.before_first_request
 def create_tables():
