@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 from project.controllers.video import Video
+from project.controllers.post import Post
 
 app = Flask(__name__)
 api = Api(app)
@@ -14,6 +15,7 @@ def create_tables():
   db.create_all()
 
 api.add_resource(Video, "/video/<int:video_id>")
+api.add_resource(Post, "/posts/")
 
 if __name__ == "__main__":
   app.run(debug=True)
