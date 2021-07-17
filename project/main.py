@@ -1,12 +1,16 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from flask import Flask
 from flask_restful import Api
 from project.controllers.video import Video
 from project.controllers.post import Post
+import os
 
 app = Flask(__name__)
 api = Api(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://rico:pwd1234@localhost:5432/flaskrestmodular'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
 @app.before_first_request
 def create_tables():
@@ -16,6 +20,3 @@ def create_tables():
 
 api.add_resource(Video, "/video/<int:video_id>")
 api.add_resource(Post, "/posts/", "/posts/<int:post_id>")
-
-if __name__ == "__main__":
-  app.run(debug=True)
