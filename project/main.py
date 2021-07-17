@@ -18,5 +18,5 @@ def create_tables():
   db.init_app(app)
   db.create_all()
 
-api.add_resource(Video, "/video/<int:video_id>")
+api.add_resource(Video, "/video/", "/video/<int:video_id>")
 api.add_resource(Post, "/posts/", "/posts/<int:post_id>")
