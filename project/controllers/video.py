@@ -7,7 +7,7 @@ class Video(Resource):
   @marshal_with(resource_fields)
   def get(self, video_id = None):
     if video_id == None:
-      result = VideoModel.query.all();
+      result = VideoModel.query.all()
     else:
       result = VideoModel.query.filter_by(id=video_id).first()
     
