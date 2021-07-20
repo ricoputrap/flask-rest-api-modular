@@ -1,4 +1,4 @@
-from project.ma import ma
+from project.utils.util import ma
 
 class TodoSchema(ma.Schema):
   class Meta:

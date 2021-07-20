@@ -1,4 +1,4 @@
-from project.db import db
+from project.utils.util import db
 
 class TodoModel(db.Model):
   id = db.Column(db.Integer, primary_key=True)

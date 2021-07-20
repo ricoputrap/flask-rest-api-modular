@@ -16,8 +16,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
 @app.before_first_request
 def create_tables():
-  from project.db import db
-  from project.ma import ma
+  from project.utils.util import db, ma
   db.init_app(app)
   ma.init_app(app)
   db.create_all()

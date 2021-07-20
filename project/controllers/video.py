@@ -1,7 +1,7 @@
 from flask_restful import Resource, abort, marshal_with
 from project.models.video import VideoModel
 from project.serializers.video import video_put_args, video_update_args, resource_fields
-from project.db import db
+from project.utils.util import db
 
 class Video(Resource):
   @marshal_with(resource_fields)

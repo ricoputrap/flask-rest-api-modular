@@ -2,7 +2,7 @@ from flask import request
 from flask_restful import Resource, abort
 from project.models.todo import TodoModel
 from project.serializers.todo import TodoSchema
-from project.db import db
+from project.utils.util import db
 
 todo_schema = TodoSchema()
 todos_schema = TodoSchema(many=True)
